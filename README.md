@@ -42,3 +42,21 @@ Pipeline stages:
 python3 -m venv venv
 source venv/bin/activate
 pip install -r requirements.txt
+```
+
+### 2) Run the demo
+```bash
+rm -rf outputs/demo_final3
+
+PYTHONPATH=. python ./cli.py \
+  --en data/demo_en.txt \
+  --zh data/demo_zh.txt \
+  --glossary data/demo_glossary.csv \
+  --out outputs/demo_final3
+```
+### 3) Inspect outputs
+```bash
+cat outputs/demo_final3/report.csv
+echo "---- PATCHED ----"
+cat outputs/demo_final3/zh_patched.txt
+```
